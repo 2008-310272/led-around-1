@@ -12,7 +12,7 @@ function 燈數 (num: number, 亮燈: boolean) {
         x = 0
         y = 17 - num
     }
-    if (input.buttonIsPressed(Button.A)) {
+    if (_1 == 1) {
         led.plot(x, y)
     } else {
         if (亮燈) {
@@ -23,30 +23,42 @@ function 燈數 (num: number, 亮燈: boolean) {
     }
 }
 input.onButtonPressed(Button.A, function () {
+    _1 = 1
+    _2 = 3
     if (a < 17) {
-        while (true) {
-            a += 1
-            燈數(a, true)
-            basic.pause(100)
-            while (a > 17) {
-                a = 0
-                basic.clearScreen()
+        if (_1 == 1) {
+            while (true) {
+                a += 1
+                燈數(a, true)
+                basic.pause(100)
+                while (a > 17) {
+                    a = 0
+                    basic.clearScreen()
+                }
             }
+        } else {
+            basic.clearScreen()
         }
     } else {
         basic.clearScreen()
     }
 })
 input.onButtonPressed(Button.B, function () {
+    _2 = 1
+    _1 = 3
     if (true) {
-        while (true) {
-            a += 1
-            燈數(a - 1, false)
-            if (a > 17) {
-                a = 1
+        if (_2 == 1) {
+            while (true) {
+                a += 1
+                燈數(a - 1, false)
+                if (a > 17) {
+                    a = 1
+                }
+                燈數(a, true)
+                basic.pause(100)
+                basic.clearScreen()
             }
-            燈數(a, true)
-            basic.pause(100)
+        } else {
             basic.clearScreen()
         }
     } else {
@@ -56,4 +68,6 @@ input.onButtonPressed(Button.B, function () {
 let y = 0
 let x = 0
 let a = 0
+let _2 = 0
+let _1 = 0
 a = 0
